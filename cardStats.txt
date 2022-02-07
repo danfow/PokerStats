@@ -1,0 +1,5 @@
+
+
+Total number of hands dealt is 312750 Total number of one pairs is 133434 and its percentage is 42.6647%
+Total number of two pairs is 133434 and its percentage is 4.82526%
+Total number of three of a kind 7305 and its percentage is 2.33573%
