@@ -1,9 +1,11 @@
-﻿  pokerGame.cpp
-C:\Users\newva\Desktop\CS classes\461\PokerStatsV2\PokerStats\pokerGame.cpp(4,20): warning C4018: '<': signed/unsigned mismatch
-C:\Users\newva\Desktop\CS classes\461\PokerStatsV2\PokerStats\pokerGame.cpp(5,21): warning C4018: '<': signed/unsigned mismatch
-C:\Users\newva\Desktop\CS classes\461\PokerStatsV2\PokerStats\pokerGame.cpp(70,20): warning C4018: '<': signed/unsigned mismatch
-C:\Users\newva\Desktop\CS classes\461\PokerStatsV2\PokerStats\pokerGame.cpp(98,20): warning C4018: '<': signed/unsigned mismatch
-C:\Users\newva\Desktop\CS classes\461\PokerStatsV2\PokerStats\pokerGame.cpp(106,20): warning C4018: '<': signed/unsigned mismatch
-C:\Users\newva\Desktop\CS classes\461\PokerStatsV2\PokerStats\pokerGame.cpp(178,20): warning C4018: '<': signed/unsigned mismatch
-C:\Users\newva\Desktop\CS classes\461\PokerStatsV2\PokerStats\pokerGame.cpp(241): warning C4715: 'pokerGame::anyoneHaveSameCard': not all control paths return a value
+﻿  main.cpp
+  pokerGame.cpp
+C:\Users\newva\Desktop\CS classes\461\PokerStatsV2\PokerStats\pokerGame.cpp(5,20): warning C4018: '<': signed/unsigned mismatch
+C:\Users\newva\Desktop\CS classes\461\PokerStatsV2\PokerStats\pokerGame.cpp(6,21): warning C4018: '<': signed/unsigned mismatch
+C:\Users\newva\Desktop\CS classes\461\PokerStatsV2\PokerStats\pokerGame.cpp(71,20): warning C4018: '<': signed/unsigned mismatch
+C:\Users\newva\Desktop\CS classes\461\PokerStatsV2\PokerStats\pokerGame.cpp(99,20): warning C4018: '<': signed/unsigned mismatch
+C:\Users\newva\Desktop\CS classes\461\PokerStatsV2\PokerStats\pokerGame.cpp(110,20): warning C4018: '<': signed/unsigned mismatch
+C:\Users\newva\Desktop\CS classes\461\PokerStatsV2\PokerStats\pokerGame.cpp(295,21): warning C4018: '<': signed/unsigned mismatch
+C:\Users\newva\Desktop\CS classes\461\PokerStatsV2\PokerStats\pokerGame.cpp(378,20): warning C4018: '<': signed/unsigned mismatch
+  Generating Code...
   PokerStats.vcxproj -> C:\Users\newva\Desktop\CS classes\461\PokerStatsV2\PokerStats\Debug\PokerStats.exe

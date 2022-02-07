@@ -1,19 +1,11 @@
 #include <iostream>
 #include "pokerGame.h"
+#include <fstream>
 using namespace std;
 
-
-int main() {
-
-	pokerGame pGame;
-	pGame.gameDeck.printDeck();
-	pGame.gameDeck.shuffleDeck();
-	cout << endl;
-	cout << "deck size is " << pGame.gameDeck.deck.size();
-	cout << endl << endl << endl;
-	pGame.gameDeck.printDeck();
-	cout << endl << endl << endl;
+void testingHandDistribution() {
 	for (int i = 0; i < 100; i++) {
+		pokerGame pGame;
 		pGame.addPlayerHand();
 		pGame.addOtherHands();
 		cout << "Player one hand size is " << pGame.getPlayerHand().size() << endl;
@@ -41,13 +33,48 @@ int main() {
 		pGame.clearOtherHands();
 		pGame.gameDeck.shuffleDeck();
 	}
-	cout << "Done" << endl;
+}
 
-	
+void pairAndThreeKindTest() {
+	ofstream cardStats("cardStats.txt");
+	ofstream logFile("logFile.txt");
+	pokerGame pGame;
+	cout << "Loading...." << endl;
+	pGame.gameDeck.shuffleDeck();
+	int handsDealt = 0;
+	int handNum = 1;
+	int totalNumIteration = 1;
 
-	
 
+	for (int i = 0; i < 250; i++) {
+		pGame.gameDeck.shuffleDeck();
+		pGame.addPlayerHand();
+		pGame.incrementPlayerHandsCounter();
+		pGame.outputStatsplayer(logFile, handNum, totalNumIteration);
+		for (int j = 0; j < 250;j++) {
+			pGame.addOtherHands();
+			pGame.incrementOthersCounter();
+			pGame.outputStatsOthers(logFile,handNum,totalNumIteration);
+			pGame.clearOtherHands();
+			pGame.gameDeck.shuffleDeck();
+			totalNumIteration += 1;
+		}
+		pGame.clearPlayerHand();
+		pGame.gameDeck.shuffleDeck();	
+		handNum += 1;
+		totalNumIteration = 1;
+	}
+	pGame.cardOutputPerLine(cardStats);
+	cardStats.close();
+	logFile.close();
+	cout << "Done! Check output files" << endl;
+	cout << endl << endl << endl << endl << endl;
 	
+}
+
+int main() {
+
+	pairAndThreeKindTest();
 
 	return 0;
 }
