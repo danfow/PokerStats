@@ -99,7 +99,6 @@ void Deck::printDeck()
 void Deck::shuffleDeck()
 {
 	//been a while since I used random functions found this example here for this function https://www.geeksforgeeks.org/shuffle-a-deck-of-cards-3/
-	srand(time(0));
 	for (int i = 0; i < deck.size(); i++) {
 		int randInt = i + (rand() % (deck.size() - i));
 		swap(deck.at(i), deck.at(randInt));

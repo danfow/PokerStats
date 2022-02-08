@@ -1,11 +1,14 @@
 #include <iostream>
 #include "pokerGame.h"
 #include <fstream>
+#include <chrono>
 using namespace std;
+using namespace std::chrono;
 
 void testingHandDistribution() {
+	pokerGame pGame;
+	srand(time(0));
 	for (int i = 0; i < 100; i++) {
-		pokerGame pGame;
 		pGame.addPlayerHand();
 		pGame.addOtherHands();
 		cout << "Player one hand size is " << pGame.getPlayerHand().size() << endl;
@@ -35,23 +38,30 @@ void testingHandDistribution() {
 	}
 }
 
+
+
+
 void pairAndThreeKindTest() {
 	ofstream cardStats("cardStats.txt");
 	ofstream logFile("logFile.txt");
 	pokerGame pGame;
+	//pGame.generatePlayers();
 	cout << "Loading...." << endl;
 	pGame.gameDeck.shuffleDeck();
 	int handsDealt = 0;
 	int handNum = 1;
 	int totalNumIteration = 1;
 
-
-	for (int i = 0; i < 250; i++) {
+	//an extra 250 iterations is being counted for player 1. Need to seperate extra player line from counter!
+	
+	for (int i = 0; i < 500; i++) {
+		pGame.incrementPlayerHandsCounter(); // where does this thing go
 		pGame.gameDeck.shuffleDeck();
-		pGame.addPlayerHand();
-		pGame.incrementPlayerHandsCounter();
+		pGame.addPlayerHand();;
 		pGame.outputStatsplayer(logFile, handNum, totalNumIteration);
-		for (int j = 0; j < 250;j++) {
+		for (int j = 0; j < 500;j++) {
+			//pGame.incrementPlayerHandsCounter();
+			//pGame.outputStatsplayer(logFile, handNum, totalNumIteration);
 			pGame.addOtherHands();
 			pGame.incrementOthersCounter();
 			pGame.outputStatsOthers(logFile,handNum,totalNumIteration);
@@ -72,9 +82,21 @@ void pairAndThreeKindTest() {
 	
 }
 
-int main() {
+void testSortFunction() {
+	pokerGame pGame;
+	pGame.gameDeck.shuffleDeck();
+	pGame.testMethod();
 
+}
+int main() {
+	// got code for getting program execution time here https://www.geeksforgeeks.org/measure-execution-time-function-cpp/
+	auto start = high_resolution_clock::now();
 	pairAndThreeKindTest();
+	//testSortFunction();
+	auto stop = high_resolution_clock::now();
+	auto duration = duration_cast<seconds>(stop - start);
+	cout << "Time taken by program: "
+		<< duration.count() << " seconds" << endl;
 
 	return 0;
 }

@@ -1,3 +1,4 @@
 C:\Users\newva\Desktop\CS classes\461\PokerStats\PokerStats\Debug\PokerStats.exe
 C:\Users\newva\Desktop\CS classes\461\PokerStats\Debug\PokerStats.exe
 C:\Users\newva\Desktop\CS classes\461\PokerStatsV2\PokerStats\Debug\PokerStats.exe
+C:\Users\newva\Desktop\CS classes\461\PokerStatsV3\PokerStats\Debug\PokerStats.exe
