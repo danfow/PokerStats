@@ -77,8 +77,10 @@ void pairAndThreeKindTest() {
 	pGame.cardOutputPerLine(cardStats);
 	cardStats.close();
 	logFile.close();
+
 	cout << "Done! Check output files" << endl;
 	cout << endl << endl << endl << endl << endl;
+
 	
 }
 
