@@ -1,14 +1,14 @@
 
 
-Total number of hands dealt is 2000500
-Total number of High card occurences is 1003327 and its occurence percentage 50.1538% total number of high card wins is 174 and its percentage of 1st players wins is 0.291277 %
- Total number of one pair occurences is 844671 and its occurence percentage 42.223% total number of one pair wins is 42119and its winning percentage is 70.5074 %
-Total number of two pairs occurences is 94872 and its occurence percentage 4.74241%and its winning percentage is 15.965 %
-Total number of three of a kind occurences is 42252 and its occurence percentage 2.11207%and its winning percentage is 8.00007 %
-Total number of straight occurences is 7933 and its occurence percentage 0.396551%and its winning percentage is 2.60308 %
-Total number of flush occurences is 3982 and its occurence percentage 0.19905%and its winning percentage is 2.63321 %
-Total number of full house occurences is 2978 and its occurence percentage 0.148863%and its winning percentage is 0 %
-Total number of 4kind occurences is 458 and its occurence percentage 0.0228943%and its winning percentage is 0 %
-Total number of straight flush occurences is 24 and its occurence percentage 0.0011997%and its winning percentage is 0 %
-Total number of royal flush occurences is 3 and its occurence percentage 0.000149963%and its winning percentage is 0 %
-Player won 59737 hands out of 2000500 simulated hands dealt. Overall win percentage for player is 0.029861%
+Total number of hands dealt is 312750
+Total number of High card occurences is 157099 and its occurence percentage 50.2315% total number of high card wins is 36 and its win percentage is 0.0188138 %
+ Total number of one pair occurences is 131594 and its occurence percentage 42.0764% total number of one pair wins is 4838and its winning percentage is 20.3705 %
+Total number of two pairs occurences is 14897 and its occurence percentage 4.76323%and its winning percentage is 66.2909 %
+Total number of three of a kind occurences is 6534 and its occurence percentage 2.08921%and its winning percentage is 85.3333 %
+Total number of straight occurences is 1205 and its occurence percentage 0.385292%and its winning percentage is -nan(ind) %
+Total number of flush occurences is 637 and its occurence percentage 0.203677%and its winning percentage is -nan(ind) %
+Total number of full house occurences is 445 and its occurence percentage 0.142286%and its winning percentage is 99.6 %
+Total number of 4kind occurences is 80 and its occurence percentage 0.0255795%and its winning percentage is -nan(ind) %
+Total number of straight flush occurences is 9 and its occurence percentage 0.0028777%and its winning percentage is -nan(ind) %
+Total number of royal flush occurences is 0 and its occurence percentage 0%and its winning percentage is -nan(ind) %
+Player won 8226 hands out of 312750 simulated hands dealt. Overall win percentage for player is 0.0263022%

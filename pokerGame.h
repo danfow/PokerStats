@@ -68,6 +68,19 @@ public:
 	}
 
 
+	int playerHighCardFrequency = 0;
+	int playerOnePairFrequency = 0;
+	int playerTwoPairFrequency = 0;
+	int playerThreeOfAKindFrequency = 0;
+	int playerFullHouseFrequency = 0;
+	int playerFourKindFrequency = 0;
+	int playerStraightFrequency = 0;
+	int playerFlushFrequency = 0;
+	int playerStraightFlushFrequency = 0;
+	int playerRoyalHouseFrequency = 0;
+	int playerhandsDealt = 0;
+
+
 private:
 	vector<Card> playerHand;
 	int totalHandsDealt = 0;
@@ -93,6 +106,9 @@ private:
 	int fullHouseWins = 0;
 	int fullHouseFrequency = 0;
 	
+
+	
+
 
 	vector<Card> otherHand1;
 	vector<Card> otherHand2;

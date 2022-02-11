@@ -54,12 +54,13 @@ void pairAndThreeKindTest() {
 
 	//an extra 250 iterations is being counted for player 1. Need to seperate extra player line from counter!
 	
-	for (int i = 0; i < 500; i++) {
+	for (int i = 0; i < 250; i++) {
+		pGame.playerhandsDealt++;
 		pGame.incrementPlayerHandsCounter(); // where does this thing go
 		pGame.gameDeck.shuffleDeck();
 		pGame.addPlayerHand();;
 		pGame.outputStatsplayer(logFile, handNum, totalNumIteration);
-		for (int j = 0; j < 500;j++) {
+		for (int j = 0; j < 250;j++) {
 			//pGame.incrementPlayerHandsCounter();
 			//pGame.outputStatsplayer(logFile, handNum, totalNumIteration);
 			pGame.addOtherHands();

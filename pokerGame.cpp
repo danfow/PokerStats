@@ -445,38 +445,47 @@ void pokerGame::incrementCardRank(handTypes hand, bool isTied)
 		{
 		case handTypes::highCard:
 			highCardWins++;
+			//playerHighCardFrequency++;
 			//return "hCard";
 			break;
 		case handTypes::onePair:
 			onePairWins++;
+			//playerOnePairFrequency++;
 			//return "1Pair";
 			break;
 		case handTypes::twoPair:
 			twoPairWins++;
+			//playerTwoPairFrequency++;
 			//return "2Pair";
 			break;
 		case handTypes::threeKind:
 			threeOfAKindWins++;
+			//playerThreeOfAKindFrequency++;
 			//return "3Pair";
 			break;
 		case handTypes::straight:
 			straightWins++;
+			//playerStraightFrequency++;
 			//return "straight";
 			break;
 		case handTypes::flush:
 			flushWins++;
+			//playerFlushFrequency++;
 			//return "flush";
 			break;
 		case handTypes::fullhouse:
 			fullHouseWins++;
+			//playerFullHouseFrequency++;
 			//return "fullHouse";
 			break;
 		case handTypes::fourKind:
 			fourkindWins++;
+			//playerFourKindFrequency++;
 			//return "4kind";
 			break;
 		case handTypes::straightFlush:
 			straightFlushWins++;
+			//playerStraightFlushFrequency++;
 			break;
 		case handTypes::royalFlush:
 			royalFlushWins++;
@@ -865,36 +874,36 @@ void pokerGame::cardOutputPerLine(ofstream& logFile)
 	logFile << endl << endl;
 	logFile << "Total number of hands dealt is " << totalHandsDealt << endl;;
 	logFile << "Total number of High card occurences is " << highCardFrequency << " and its occurence percentage " << ((highCardFrequency / float(totalHandsDealt))) * 100 << "%" << " total number of high card wins is " 
-		<< highCardWins << " and its percentage of 1st players wins is " 
-		<< (highCardWins/float(playerWins))*100 << " %" << endl;
+		<< highCardWins << " and its win percentage is " 
+		<< (highCardWins/float(playerHighCardFrequency))*100 << " %" << endl;
 
 	logFile << " Total number of one pair occurences is " << onePairFrequency << " and its occurence percentage " << ((onePairFrequency / float(totalHandsDealt))) * 100 << "%" << " total number of one pair wins is " 
 		<< onePairWins << "and its winning percentage is "
-		<< (onePairWins / float(playerWins)) * 100 << " %" << endl;
+		<< (onePairWins / float(playerOnePairFrequency)) * 100 << " %" << endl;
 
 	logFile << "Total number of two pairs occurences is " << twoPairFrequency << " and its occurence percentage " << ((twoPairFrequency / float(totalHandsDealt))) * 100 << "%" <<  "and its winning percentage is " 
-		<< (twoPairWins / float(playerWins)) * 100 << " %" << endl;
+		<< (twoPairWins / float(playerTwoPairFrequency)) * 100 << " %" << endl;
 
 	logFile << "Total number of three of a kind occurences is " << threeOfAKindFrequency << " and its occurence percentage " << ((threeOfAKindFrequency / float(totalHandsDealt))) * 100 << "%" << "and its winning percentage is " 
-		<< (threeOfAKindWins / float(playerWins)) * 100 << " %" << endl;
+		<< (threeOfAKindWins / float(playerThreeOfAKindFrequency)) * 100 << " %" << endl;
 
 	logFile << "Total number of straight occurences is " << straightFrequency << " and its occurence percentage " << ((straightFrequency / float(totalHandsDealt))) * 100 << "%" << "and its winning percentage is " 
-		<< (straightWins / float(playerWins)) * 100 << " %" << endl;
+		<< (straightWins / float(playerStraightFrequency)) * 100 << " %" << endl;
 
-	logFile << "Total number of flush occurences is " << flushFrequency << " and its occurence percentage " << ((flushFrequency / float(totalHandsDealt))) * 100 << "%" << "and its winning percentage is " 
-		<< (flushWins / float(playerWins)) * 100 << " %" << endl;
+	logFile << "Total number of flush occurences is " << flushFrequency << " and its occurence percentage " << ((flushFrequency / float(totalHandsDealt))) * 100 << "%" << "and its winning percentage is "
+		<< (flushWins / float(playerFlushFrequency)) * 100 << " %" << endl;
 
 	logFile << "Total number of full house occurences is " << fullHouseFrequency << " and its occurence percentage " << ((fullHouseFrequency / float(totalHandsDealt))) * 100 << "%" << "and its winning percentage is " 
-		<< (fullHouseWins / float(playerWins)) * 100 << " %" << endl;
+		<< (fullHouseWins / float(playerFullHouseFrequency)) * 100 << " %" << endl;
 
 	logFile << "Total number of 4kind occurences is " << fourKindFrequency << " and its occurence percentage " << ((fourKindFrequency / float(totalHandsDealt))) * 100 << "%" << "and its winning percentage is " 
-		<< (fourkindWins / float(playerWins)) * 100 << " %" << endl;
+		<< (fourkindWins / float(playerFourKindFrequency)) * 100 << " %" << endl;
 
 	logFile << "Total number of straight flush occurences is " << straightFlushFrequency << " and its occurence percentage " << ((straightFlushFrequency / float(totalHandsDealt))) * 100 << "%" << "and its winning percentage is " 
-		<< (straightFlushWins / float(playerWins)) * 100 << " %" << endl;;
+		<< (straightFlushWins / float(playerStraightFrequency)) * 100 << " %" << endl;;
 
 	logFile << "Total number of royal flush occurences is " << royalFlushFrequency << " and its occurence percentage " << ((royalFlushFrequency / float(totalHandsDealt))) * 100 << "%" << "and its winning percentage is " 
-		<< (royalFlushWins / float(playerWins)) * 100 << " %" << endl;;
+		<< (royalFlushWins / float(playerRoyalHouseFrequency)) * 100 << " %" << endl;;
 	logFile << "Player won "<< playerWins << " hands out of " << totalHandsDealt << " simulated hands dealt. Overall win percentage for player is " << playerWins / float(totalHandsDealt) << "%" << endl;
 
 }
@@ -906,30 +915,35 @@ void pokerGame::outputStatsplayer(ofstream& statsFile, int playerHandNum, int ot
 	//statsFile << "Player Hand " << playerHandNum << " iteration " << otherHandNum << endl;
 	if (isRoyalFlush(players.at(0)) == true) {
 		output = "Royal Flush";
-		royalFlushFrequency += 1;
+		//royalFlushFrequency += 1;
+		//playerFlushFrequency++;
 		playerHandTypes.at(0) = handTypes::royalFlush;
 	}
 
 	else if (isStraighFlush(players.at(0)) == true) {
 		output = "Straight Flush";
-		straightFlushFrequency += 1;
+		//straightFlushFrequency += 1;
+		//playerStraightFlushFrequency++;
 		playerHandTypes.at(0) = handTypes::straightFlush;
 	}
 	else if (pairOrThreeKind(players.at(0)) == 5) {
 		output = " 4Kind";
-		fourKindFrequency+=1;
+		//fourKindFrequency+=1;
+		//playerFourKindFrequency++;
 		playerHandTypes.at(0) = handTypes::fourKind;
 	}
 
 	else if (isFlush(players.at(0)) == true) {
 		output = "Flush";
-		flushFrequency += 1;
+		//flushFrequency += 1;
+		//playerFlushFrequency++;
 		playerHandTypes.at(0) = handTypes::flush;
 	}
 	
 	else if (pairOrThreeKind(players.at(0)) == 4) {
 		output = " Full House";
-		fullHouseFrequency += 1;
+		//fullHouseFrequency += 1;
+		//playerFullHouseFrequency++;
 		playerHandTypes.at(0) = handTypes::fullhouse;
 		//twoPairFrequency += 1;
 		//onePairFrequency += 1;
@@ -937,13 +951,16 @@ void pokerGame::outputStatsplayer(ofstream& statsFile, int playerHandNum, int ot
 	}
 	else if (isStraight(players.at(0)) == true) {
 		output = " straight";
-		straightFrequency += 1;
+		//straightFrequency += 1;
+		//playerStraightFrequency++;
 		playerHandTypes.at(0) = handTypes::straight;
 	}
 	
 	else if (pairOrThreeKind(players.at(0)) == 3) {
 		output = " 3kind";
-		threeOfAKindFrequency += 1;
+		//threeOfAKindFrequency += 1;
+		//playerThreeOfAKindFrequency++;
+
 		playerHandTypes.at(0) = handTypes::threeKind;
 		//onePairFrequency += 1;
 	}
@@ -951,20 +968,23 @@ void pokerGame::outputStatsplayer(ofstream& statsFile, int playerHandNum, int ot
 	
 	else if (pairOrThreeKind(players.at(0)) == 2) {
 		output = " 2pair";
-		twoPairFrequency += 1;
+		//twoPairFrequency += 1;
+		//playerTwoPairFrequency++;
 		playerHandTypes.at(0) = handTypes::twoPair;
 		//onePairFrequency += 1; // does a two pair also count as an occurence of a pair?
 	}
 	
 	else if (pairOrThreeKind(players.at(0)) == 1) {
 		output = " pair";
-		onePairFrequency += 1; // do a 3kind also count as an occurence of a pair?
+		//playerOnePairFrequency++;
+		//onePairFrequency += 1; // do a 3kind also count as an occurence of a pair?
 		playerHandTypes.at(0) = handTypes::onePair;
 	}
 	else  
 	{
 		output = "HCard";
-		highCardFrequency += 1;
+		//playerHighCardFrequency++;
+		//highCardFrequency += 1;
 		playerHandTypes.at(0) = handTypes::highCard;
 	 
 	}
@@ -994,68 +1014,145 @@ void pokerGame::outputStatsOthers(ofstream& statsFile, int playerHandNum,int oth
 	
 	
 
-	for (int i = 1; i < players.size(); i++) { //changed this to 0...
+	for (int i = 0; i < players.size(); i++) { //changed this to 0...
 		if (isRoyalFlush(players.at(i)) == true) {
-			output = "Royal Flush";
-			royalFlushFrequency += 1;
-			playerHandTypes.at(i) = handTypes::royalFlush;
+			
+
+			if (i == 0) {
+				playerRoyalHouseFrequency++;
+			}
+			else {
+				output = "Royal Flush";
+				royalFlushFrequency += 1;
+				playerHandTypes.at(i) = handTypes::royalFlush;
+			}
 		}
 
 		else if (isStraighFlush(players.at(i)) == true) {
-			output = "Straight Flush";
-			straightFlushFrequency += 1;
-			playerHandTypes.at(i) = handTypes::straightFlush;
+			
+
+			if (i == 0) {
+				playerStraightFlushFrequency++;
+			}
+
+			else {
+				output = "Straight Flush";
+				straightFlushFrequency += 1;
+				playerHandTypes.at(i) = handTypes::straightFlush;
+			}
 		}
 		else if (pairOrThreeKind(players.at(i)) == 5) {
-			output = " 4Kind";
-			fourKindFrequency += 1;
-			playerHandTypes.at(i) = handTypes::fourKind;
+			
+
+			if (i == 0) {
+				playerFourKindFrequency++;
+			}
+
+			else {
+				output = " 4Kind";
+				fourKindFrequency += 1;
+				playerHandTypes.at(i) = handTypes::fourKind;
+			}
 		}
 		else if (pairOrThreeKind(players.at(i)) == 4) {
-			output = "Full house";
-			fullHouseFrequency += 1;
-			playerHandTypes.at(i) = handTypes::fullhouse;
+			
+			
+
+			if (i == 0) {
+				playerFullHouseFrequency++;
+			}
+
+			else {
+				output = "Full house";
+				fullHouseFrequency += 1;
+				playerHandTypes.at(i) = handTypes::fullhouse;
+			}
+
 			//twoPairFrequency += 1;
 			//onePairFrequency += 1;
 			//threeOfAKindFrequency += 1;
 		}
 
 		else if (isFlush(players.at(i)) == true) {
-			output += "Flush";
-			flushFrequency += 1;
-			playerHandTypes.at(i) = handTypes::flush;
+
+			if (i == 0) {
+				playerFlushFrequency++;
+			}
+			else {
+				output += "Flush";
+				flushFrequency += 1;
+				playerHandTypes.at(i) = handTypes::flush;
+			}
+			
+			
 		}
 
 		else if (isStraight(players.at(i)) == true) {
-			output = " straight";
-			straightFrequency += 1;
-			playerHandTypes.at(i) = handTypes::straight;
+
+			if (i == 0) {
+				playerStraightFrequency++;
+			}
+
+			else {
+				output = " straight";
+				straightFrequency += 1;
+				playerHandTypes.at(i) = handTypes::straight;
+			}
+			
 		}
 		
 		else if (pairOrThreeKind(players.at(i)) == 3) {
-			output = " 3kind";
-			threeOfAKindFrequency += 1;
-			playerHandTypes.at(i) = handTypes::threeKind;
+
+			if (i == 0) {
+				playerThreeOfAKindFrequency++;
+			}
+			else {
+				output = " 3kind";
+				threeOfAKindFrequency += 1;
+				playerHandTypes.at(i) = handTypes::threeKind;
+			}
+			
 			//onePairFrequency += 1;
 		}
 		
 		
 		else if (pairOrThreeKind(players.at(i)) == 2) {
-			output = " 2pair";
-			twoPairFrequency += 1;
-			playerHandTypes.at(i) = handTypes::twoPair;
+
+			if (i == 0) {
+				playerTwoPairFrequency++;
+
+			}
+			else {
+				output = " 2pair";
+				twoPairFrequency += 1;
+				playerHandTypes.at(i) = handTypes::twoPair;
+			}
+		
 			//onePairFrequency += 1;
 		}
 		
 		else if (pairOrThreeKind(players.at(i)) == 1) {
-			output = " pair";
-			onePairFrequency += 1;
-			playerHandTypes.at(i) = handTypes::onePair;
+
+			if (i == 0) {
+				playerOnePairFrequency++;
+				}
+			else {
+				output = " pair";
+				onePairFrequency += 1;
+				playerHandTypes.at(i) = handTypes::onePair;
+			}
 		}
 		else  {
-			output = "HCard";
-			highCardFrequency += 1;
-			playerHandTypes.at(i) = handTypes::highCard;
+			if (i == 0) {
+				playerHighCardFrequency++;
+				}
+			else {
+				output = "HCard";
+				playerHighCardFrequency++;
+				highCardFrequency += 1;
+				playerHandTypes.at(i) = handTypes::highCard;
+			}
+			
 
 		}
 
