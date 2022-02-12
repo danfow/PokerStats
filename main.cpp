@@ -54,13 +54,13 @@ void pairAndThreeKindTest() {
 
 	//an extra 250 iterations is being counted for player 1. Need to seperate extra player line from counter!
 	
-	for (int i = 0; i < 250; i++) {
+	for (int i = 0; i < 800; i++) {
 		pGame.playerhandsDealt++;
 		pGame.incrementPlayerHandsCounter(); // where does this thing go
 		pGame.gameDeck.shuffleDeck();
 		pGame.addPlayerHand();;
 		pGame.outputStatsplayer(logFile, handNum, totalNumIteration);
-		for (int j = 0; j < 250;j++) {
+		for (int j = 0; j < 500;j++) {
 			//pGame.incrementPlayerHandsCounter();
 			//pGame.outputStatsplayer(logFile, handNum, totalNumIteration);
 			pGame.addOtherHands();
@@ -103,3 +103,13 @@ int main() {
 
 	return 0;
 }
+
+
+
+/*TODO
+*Fix bug of aces not being ranked highest in 1 pair ties
+Implement tie rules for 2pair and up
+* Get full house tie rules and up implemented
+* fix log counter for player
+* Profit
+*/

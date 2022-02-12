@@ -13,16 +13,21 @@ public:
 	void sortOthersHand();
 	void sortPlayerHandRankings();
 	enum handTypes { minimum  = -1, highCard = 0, onePair = 1, twoPair = 2, threeKind = 3, straight = 4, flush = 5, fullhouse = 6,fourKind = 7,straightFlush = 8,royalFlush = 9 };
-	string getStringValueCard(Card::values cardVal);
-	string getStringValueRank(handTypes handRank);
-	int getCountFromRankString(string HandRankString);
-	int evalHighCard(vector<Card> hand, int rightOffset);
+	string getStringValueCard(Card::values cardVal); 
+	string getStringValueRank(handTypes handRank); 
+	int getCountFromRankString(string HandRankString); 
+	int evalHighCard(vector<Card> &hand, int rightOffset); 
 	int getHighCardIndex(int offsetFromRightOfHand);
-	int evalOnePair(vector<Card> hand, int rightOffset);
+	int evalOnePair(vector<Card> &hand, int rightOffset); 
+	int evalStraight(vector<Card> &hand); 
 	int getHighPairIndex(int offsetFromRightOfHand);
+	int getHighTwoPairIndex(int offsetFromRightOfHand);
+	int getHighThreeKindIndex();
+	int getHighStraightIndex();
+	int getHighFlushIndex();
 	bool isPairsInVector(int pairVal, vector<Card> hand);
-	void incrementCardRank(handTypes hand, bool isTied);
-	string printHand(vector<Card> hand);
+	void incrementCardRank(handTypes &hand, bool isTied); 
+	string printHand(vector<Card> hand); 
 	void clearPlayerHand();
 	void clearOtherHands();
 	Deck gameDeck;
@@ -77,7 +82,7 @@ public:
 	int playerStraightFrequency = 0;
 	int playerFlushFrequency = 0;
 	int playerStraightFlushFrequency = 0;
-	int playerRoyalHouseFrequency = 0;
+	int playerRoyalFlushFrequency = 0;
 	int playerhandsDealt = 0;
 
 
@@ -105,6 +110,7 @@ private:
 	int royalFlushFrequency = 0;
 	int fullHouseWins = 0;
 	int fullHouseFrequency = 0;
+	int testInt = 0;
 	
 
 	

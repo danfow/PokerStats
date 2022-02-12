@@ -1,33 +1,51 @@
 ﻿  pokerGame.cpp
-C:\Users\newva\Desktop\CS classes\CS461\PokerStats\pokerGame.cpp(35,19): warning C4018: '<': signed/unsigned mismatch
-C:\Users\newva\Desktop\CS classes\CS461\PokerStats\pokerGame.cpp(70,20): warning C4018: '<': signed/unsigned mismatch
-C:\Users\newva\Desktop\CS classes\CS461\PokerStats\pokerGame.cpp(75,20): warning C4018: '<': signed/unsigned mismatch
-C:\Users\newva\Desktop\CS classes\CS461\PokerStats\pokerGame.cpp(95,20): warning C4018: '<': signed/unsigned mismatch
-C:\Users\newva\Desktop\CS classes\CS461\PokerStats\pokerGame.cpp(96,21): warning C4018: '<': signed/unsigned mismatch
-C:\Users\newva\Desktop\CS classes\CS461\PokerStats\pokerGame.cpp(268,20): warning C4018: '<': signed/unsigned mismatch
-C:\Users\newva\Desktop\CS classes\CS461\PokerStats\pokerGame.cpp(278,20): warning C4018: '<': signed/unsigned mismatch
-C:\Users\newva\Desktop\CS classes\CS461\PokerStats\pokerGame.cpp(330,20): warning C4018: '<': signed/unsigned mismatch
-C:\Users\newva\Desktop\CS classes\CS461\PokerStats\pokerGame.cpp(331,21): warning C4018: '<': signed/unsigned mismatch
-C:\Users\newva\Desktop\CS classes\CS461\PokerStats\pokerGame.cpp(352,20): warning C4018: '<': signed/unsigned mismatch
-C:\Users\newva\Desktop\CS classes\CS461\PokerStats\pokerGame.cpp(370,21): warning C4018: '<': signed/unsigned mismatch
-C:\Users\newva\Desktop\CS classes\CS461\PokerStats\pokerGame.cpp(373,21): warning C4018: '<': signed/unsigned mismatch
-C:\Users\newva\Desktop\CS classes\CS461\PokerStats\pokerGame.cpp(374,22): warning C4018: '<': signed/unsigned mismatch
-C:\Users\newva\Desktop\CS classes\CS461\PokerStats\pokerGame.cpp(383,21): warning C4018: '<': signed/unsigned mismatch
-C:\Users\newva\Desktop\CS classes\CS461\PokerStats\pokerGame.cpp(389,21): warning C4018: '<': signed/unsigned mismatch
-C:\Users\newva\Desktop\CS classes\CS461\PokerStats\pokerGame.cpp(399,21): warning C4018: '<': signed/unsigned mismatch
-C:\Users\newva\Desktop\CS classes\CS461\PokerStats\pokerGame.cpp(429,20): warning C4018: '<': signed/unsigned mismatch
-C:\Users\newva\Desktop\CS classes\CS461\PokerStats\pokerGame.cpp(508,20): warning C4018: '<': signed/unsigned mismatch
-C:\Users\newva\Desktop\CS classes\CS461\PokerStats\pokerGame.cpp(536,20): warning C4018: '<': signed/unsigned mismatch
-C:\Users\newva\Desktop\CS classes\CS461\PokerStats\pokerGame.cpp(558,20): warning C4018: '<': signed/unsigned mismatch
-C:\Users\newva\Desktop\CS classes\CS461\PokerStats\pokerGame.cpp(730,20): warning C4018: '<': signed/unsigned mismatch
-C:\Users\newva\Desktop\CS classes\CS461\PokerStats\pokerGame.cpp(753,20): warning C4018: '<': signed/unsigned mismatch
-C:\Users\newva\Desktop\CS classes\CS461\PokerStats\pokerGame.cpp(773,21): warning C4018: '<': signed/unsigned mismatch
-C:\Users\newva\Desktop\CS classes\CS461\PokerStats\pokerGame.cpp(837,20): warning C4018: '<': signed/unsigned mismatch
-C:\Users\newva\Desktop\CS classes\CS461\PokerStats\pokerGame.cpp(1017,20): warning C4018: '<': signed/unsigned mismatch
-C:\Users\newva\Desktop\CS classes\CS461\PokerStats\pokerGame.cpp(1170,20): warning C4018: '<': signed/unsigned mismatch
-C:\Users\newva\Desktop\CS classes\CS461\PokerStats\pokerGame.cpp(1263,20): warning C4018: '<': signed/unsigned mismatch
-C:\Users\newva\Desktop\CS classes\CS461\PokerStats\pokerGame.cpp(200): warning C4715: 'pokerGame::getStringValueRank': not all control paths return a value
-C:\Users\newva\Desktop\CS classes\CS461\PokerStats\pokerGame.cpp(239): warning C4715: 'pokerGame::getCountFromRankString': not all control paths return a value
-C:\Users\newva\Desktop\CS classes\CS461\PokerStats\pokerGame.cpp(299): warning C4715: 'pokerGame::getHighCardIndex': not all control paths return a value
-C:\Users\newva\Desktop\CS classes\CS461\PokerStats\pokerGame.cpp(425): warning C4715: 'pokerGame::getHighPairIndex': not all control paths return a value
-  PokerStats.vcxproj -> C:\Users\newva\Desktop\CS classes\CS461\PokerStats\Debug\PokerStats.exe
+C:\Users\newva\Desktop\CS classes\461\PokerStatsV6\PokerStats\pokerGame.cpp(36,19): warning C4018: '<': signed/unsigned mismatch
+C:\Users\newva\Desktop\CS classes\461\PokerStatsV6\PokerStats\pokerGame.cpp(71,20): warning C4018: '<': signed/unsigned mismatch
+C:\Users\newva\Desktop\CS classes\461\PokerStatsV6\PokerStats\pokerGame.cpp(76,20): warning C4018: '<': signed/unsigned mismatch
+C:\Users\newva\Desktop\CS classes\461\PokerStatsV6\PokerStats\pokerGame.cpp(96,20): warning C4018: '<': signed/unsigned mismatch
+C:\Users\newva\Desktop\CS classes\461\PokerStatsV6\PokerStats\pokerGame.cpp(97,21): warning C4018: '<': signed/unsigned mismatch
+C:\Users\newva\Desktop\CS classes\461\PokerStatsV6\PokerStats\pokerGame.cpp(269,20): warning C4018: '<': signed/unsigned mismatch
+C:\Users\newva\Desktop\CS classes\461\PokerStatsV6\PokerStats\pokerGame.cpp(279,20): warning C4018: '<': signed/unsigned mismatch
+C:\Users\newva\Desktop\CS classes\461\PokerStatsV6\PokerStats\pokerGame.cpp(347,20): warning C4018: '<': signed/unsigned mismatch
+C:\Users\newva\Desktop\CS classes\461\PokerStatsV6\PokerStats\pokerGame.cpp(348,21): warning C4018: '<': signed/unsigned mismatch
+C:\Users\newva\Desktop\CS classes\461\PokerStatsV6\PokerStats\pokerGame.cpp(369,20): warning C4018: '<': signed/unsigned mismatch
+C:\Users\newva\Desktop\CS classes\461\PokerStatsV6\PokerStats\pokerGame.cpp(408,21): warning C4018: '<': signed/unsigned mismatch
+C:\Users\newva\Desktop\CS classes\461\PokerStatsV6\PokerStats\pokerGame.cpp(409,22): warning C4018: '<': signed/unsigned mismatch
+C:\Users\newva\Desktop\CS classes\461\PokerStatsV6\PokerStats\pokerGame.cpp(418,21): warning C4018: '<': signed/unsigned mismatch
+C:\Users\newva\Desktop\CS classes\461\PokerStatsV6\PokerStats\pokerGame.cpp(424,21): warning C4018: '<': signed/unsigned mismatch
+C:\Users\newva\Desktop\CS classes\461\PokerStatsV6\PokerStats\pokerGame.cpp(434,21): warning C4018: '<': signed/unsigned mismatch
+C:\Users\newva\Desktop\CS classes\461\PokerStatsV6\PokerStats\pokerGame.cpp(472,20): warning C4018: '<': signed/unsigned mismatch
+C:\Users\newva\Desktop\CS classes\461\PokerStatsV6\PokerStats\pokerGame.cpp(473,21): warning C4018: '<': signed/unsigned mismatch
+C:\Users\newva\Desktop\CS classes\461\PokerStatsV6\PokerStats\pokerGame.cpp(491,20): warning C4018: '<': signed/unsigned mismatch
+C:\Users\newva\Desktop\CS classes\461\PokerStatsV6\PokerStats\pokerGame.cpp(531,21): warning C4018: '<': signed/unsigned mismatch
+C:\Users\newva\Desktop\CS classes\461\PokerStatsV6\PokerStats\pokerGame.cpp(532,22): warning C4018: '<': signed/unsigned mismatch
+C:\Users\newva\Desktop\CS classes\461\PokerStatsV6\PokerStats\pokerGame.cpp(538,22): warning C4018: '<': signed/unsigned mismatch
+C:\Users\newva\Desktop\CS classes\461\PokerStatsV6\PokerStats\pokerGame.cpp(545,22): warning C4018: '<': signed/unsigned mismatch
+C:\Users\newva\Desktop\CS classes\461\PokerStatsV6\PokerStats\pokerGame.cpp(546,23): warning C4018: '<': signed/unsigned mismatch
+C:\Users\newva\Desktop\CS classes\461\PokerStatsV6\PokerStats\pokerGame.cpp(563,22): warning C4018: '<': signed/unsigned mismatch
+C:\Users\newva\Desktop\CS classes\461\PokerStatsV6\PokerStats\pokerGame.cpp(580,23): warning C4018: '<': signed/unsigned mismatch
+C:\Users\newva\Desktop\CS classes\461\PokerStatsV6\PokerStats\pokerGame.cpp(587,23): warning C4018: '<': signed/unsigned mismatch
+C:\Users\newva\Desktop\CS classes\461\PokerStatsV6\PokerStats\pokerGame.cpp(625,20): warning C4018: '<': signed/unsigned mismatch
+C:\Users\newva\Desktop\CS classes\461\PokerStatsV6\PokerStats\pokerGame.cpp(626,21): warning C4018: '<': signed/unsigned mismatch
+C:\Users\newva\Desktop\CS classes\461\PokerStatsV6\PokerStats\pokerGame.cpp(650,20): warning C4018: '<': signed/unsigned mismatch
+C:\Users\newva\Desktop\CS classes\461\PokerStatsV6\PokerStats\pokerGame.cpp(676,20): warning C4018: '<': signed/unsigned mismatch
+C:\Users\newva\Desktop\CS classes\461\PokerStatsV6\PokerStats\pokerGame.cpp(686,20): warning C4018: '<': signed/unsigned mismatch
+C:\Users\newva\Desktop\CS classes\461\PokerStatsV6\PokerStats\pokerGame.cpp(710,20): warning C4018: '<': signed/unsigned mismatch
+C:\Users\newva\Desktop\CS classes\461\PokerStatsV6\PokerStats\pokerGame.cpp(720,20): warning C4018: '<': signed/unsigned mismatch
+C:\Users\newva\Desktop\CS classes\461\PokerStatsV6\PokerStats\pokerGame.cpp(742,20): warning C4018: '<': signed/unsigned mismatch
+C:\Users\newva\Desktop\CS classes\461\PokerStatsV6\PokerStats\pokerGame.cpp(822,20): warning C4018: '<': signed/unsigned mismatch
+C:\Users\newva\Desktop\CS classes\461\PokerStatsV6\PokerStats\pokerGame.cpp(854,20): warning C4018: '<': signed/unsigned mismatch
+C:\Users\newva\Desktop\CS classes\461\PokerStatsV6\PokerStats\pokerGame.cpp(876,20): warning C4018: '<': signed/unsigned mismatch
+C:\Users\newva\Desktop\CS classes\461\PokerStatsV6\PokerStats\pokerGame.cpp(1048,20): warning C4018: '<': signed/unsigned mismatch
+C:\Users\newva\Desktop\CS classes\461\PokerStatsV6\PokerStats\pokerGame.cpp(1071,20): warning C4018: '<': signed/unsigned mismatch
+C:\Users\newva\Desktop\CS classes\461\PokerStatsV6\PokerStats\pokerGame.cpp(1206,20): warning C4018: '<': signed/unsigned mismatch
+C:\Users\newva\Desktop\CS classes\461\PokerStatsV6\PokerStats\pokerGame.cpp(1438,20): warning C4018: '<': signed/unsigned mismatch
+C:\Users\newva\Desktop\CS classes\461\PokerStatsV6\PokerStats\pokerGame.cpp(1591,20): warning C4018: '<': signed/unsigned mismatch
+C:\Users\newva\Desktop\CS classes\461\PokerStatsV6\PokerStats\pokerGame.cpp(1715,20): warning C4018: '<': signed/unsigned mismatch
+C:\Users\newva\Desktop\CS classes\461\PokerStatsV6\PokerStats\pokerGame.cpp(201): warning C4715: 'pokerGame::getStringValueRank': not all control paths return a value
+C:\Users\newva\Desktop\CS classes\461\PokerStatsV6\PokerStats\pokerGame.cpp(240): warning C4715: 'pokerGame::getCountFromRankString': not all control paths return a value
+C:\Users\newva\Desktop\CS classes\461\PokerStatsV6\PokerStats\pokerGame.cpp(300): warning C4715: 'pokerGame::getHighCardIndex': not all control paths return a value
+C:\Users\newva\Desktop\CS classes\461\PokerStatsV6\PokerStats\pokerGame.cpp(460): warning C4715: 'pokerGame::getHighPairIndex': not all control paths return a value
+C:\Users\newva\Desktop\CS classes\461\PokerStatsV6\PokerStats\pokerGame.cpp(670): warning C4715: 'pokerGame::getHighThreeKindIndex': not all control paths return a value
+C:\Users\newva\Desktop\CS classes\461\PokerStatsV6\PokerStats\pokerGame.cpp(617): warning C4715: 'pokerGame::getHighTwoPairIndex': not all control paths return a value
+  PokerStats.vcxproj -> C:\Users\newva\Desktop\CS classes\461\PokerStatsV6\PokerStats\Debug\PokerStats.exe
