@@ -1,13 +1,14 @@
 
 
-Total number of hands dealt is 1250500
-Total number of High card is 625880 and its percentage is 50.0504%
- Total number of one pairs is 529527 and its percentage is 42.3452%
-Total number of two pairs is 59300 and its percentage is 4.7421%
-Total number of three of a kind is 26338 and its percentage is 2.1062%
-Total number of straights is 4902 and its percentage is 0.392003%
-Total number of flushes is 2462 and its percentage is 0.196881%
-Total number of full house is 1783 and its percentage is 0.142583%
-Total number of 4kind is 286 and its percentage is 0.0228709%
-Total number of Straight flushes is 22 and its percentage is 0.0017593%
-Total number of Royal flushes is 0 and its percentage is 0%
+Total number of hands dealt is 2000800
+Total number of High card occurences is 1000370 and its occurence percentage is 49.9985% total number of high card wins is 167 and its win percentage is 0.0140706 %
+ Total number of one pair occurences is 847043 and its occurence percentage is 42.3352% total number of one pair wins is 33573and its winning percentage is 18.5486 %
+Total number of two pairs occurences is 95040 and its occurence percentage is 4.7501% and its winning percentage is 69.1027 %
+Total number of three of a kind occurences is 42413 and its occurence percentage is 2.1198% and its winning percentage is 86.0211 %
+Total number of straight occurences is 7889 and its occurence percentage is 0.394292% and its winning percentage is 97.32 %
+Total number of flush occurences is 3838 and its occurence percentage is 0.191823% and its winning percentage is 98 %
+Total number of full house occurences is 2880 and its occurence percentage is 0.143942% and its winning percentage is 99.8 %
+Total number of 4kind occurences is 496 and its occurence percentage is 0.0247901% player did not have any four of a kinds so no win percentage
+Total number of straight flush occurences is 30 and its occurence percentage is 0.0014994% player did not have any straight flushes so no win percentage 
+Total number of royal flush occurences is 1 and its occurence percentage is 4.998e-05% Player did not have any royal flushes so no win percentage 
+Player won 59107 rounds out of 333466 simulated rounds. Overall win percentage for player is 17.725%

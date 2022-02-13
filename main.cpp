@@ -54,7 +54,8 @@ void pairAndThreeKindTest() {
 
 	//an extra 250 iterations is being counted for player 1. Need to seperate extra player line from counter!
 	
-	for (int i = 0; i < 500; i++) {
+	for (int i = 0; i < 800; i++) {
+		pGame.playerhandsDealt++;
 		pGame.incrementPlayerHandsCounter(); // where does this thing go
 		pGame.gameDeck.shuffleDeck();
 		pGame.addPlayerHand();;
@@ -77,8 +78,10 @@ void pairAndThreeKindTest() {
 	pGame.cardOutputPerLine(cardStats);
 	cardStats.close();
 	logFile.close();
+
 	cout << "Done! Check output files" << endl;
 	cout << endl << endl << endl << endl << endl;
+
 	
 }
 
@@ -100,3 +103,13 @@ int main() {
 
 	return 0;
 }
+
+
+
+/*TODO
+*Fix bug of aces not being ranked highest in 1 pair ties
+Implement tie rules for 2pair and up
+* Get full house tie rules and up implemented
+* fix log counter for player
+* Profit
+*/
