@@ -23,8 +23,11 @@ public:
 	int getHighPairIndex(int offsetFromRightOfHand);
 	int getHighTwoPairIndex(int offsetFromRightOfHand);
 	int getHighThreeKindIndex();
+	int getHighFourKindIndex();
 	int getHighStraightIndex();
+	int getFullHouseIndex();
 	int getHighFlushIndex();
+	int getStraightFlushIndex();
 	bool isPairsInVector(int pairVal, vector<Card> hand);
 	void incrementCardRank(handTypes &hand, bool isTied); 
 	string printHand(vector<Card> hand); 
@@ -66,10 +69,10 @@ public:
 	void outputStatsOthers(ofstream& statsFile, int playerHandNum, int otherHandNum);
 	void testMethod();
 	void incrementOthersCounter() {
-		totalHandsDealt += 5; // dont forget to change this when its 2 for loops!
+		totalHandsDealt += 5; 
 	}
 	void incrementPlayerHandsCounter() {
-		totalHandsDealt += 1; // dont forget to change this when its 2 for loops!
+		totalHandsDealt += 1; 
 	}
 
 

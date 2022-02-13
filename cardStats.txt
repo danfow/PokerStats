@@ -7,8 +7,8 @@ Total number of two pairs occurences is 95040 and its occurence percentage is 4.
 Total number of three of a kind occurences is 42413 and its occurence percentage is 2.1198% and its winning percentage is 86.0211 %
 Total number of straight occurences is 7889 and its occurence percentage is 0.394292% and its winning percentage is 97.32 %
 Total number of flush occurences is 3838 and its occurence percentage is 0.191823% and its winning percentage is 98 %
-Total number of full house occurences is 2880 and its occurence percentage is 0.143942% and its winning percentage is 99.2 %
+Total number of full house occurences is 2880 and its occurence percentage is 0.143942% and its winning percentage is 99.8 %
 Total number of 4kind occurences is 496 and its occurence percentage is 0.0247901% player did not have any four of a kinds so no win percentage
 Total number of straight flush occurences is 30 and its occurence percentage is 0.0014994% player did not have any straight flushes so no win percentage 
 Total number of royal flush occurences is 1 and its occurence percentage is 4.998e-05% Player did not have any royal flushes so no win percentage 
-Player won 59101 rounds out of 333466 simulated rounds. Overall win percentage for player is 17.7232%
+Player won 59107 rounds out of 333466 simulated rounds. Overall win percentage for player is 17.725%

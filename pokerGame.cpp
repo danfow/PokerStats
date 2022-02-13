@@ -669,6 +669,58 @@ int pokerGame::getHighThreeKindIndex()
 	
 }
 
+int pokerGame::getHighFourKindIndex()
+{
+	
+		vector<int> highestFourKindPlayer{ 0,0,0,0,0,0 };
+		vector<int> timeCardOccuredPerPlayer{ 0,0,0,0,0,0 };
+		vector<int> playerUniqueCardValues;
+
+		for (int i = 0; i < players.size(); i++) { //iterate through all sorted players hand
+			for (int j = 0; j < players.at(i).size(); j++) { //iterate through players hands right to left since hand is sorted. Looking for pair value
+				if (find(playerUniqueCardValues.begin(), playerUniqueCardValues.end(), players.at(i).at(j).getValue()) != playerUniqueCardValues.end() && timeCardOccuredPerPlayer.at(i) == 3) {//3 previous 4kind elem already occured
+					highestFourKindPlayer.insert(highestFourKindPlayer.begin() + i, players.at(i).at(j).getValue());
+				}
+				else if (find(playerUniqueCardValues.begin(), playerUniqueCardValues.end(), players.at(i).at(j).getValue()) != playerUniqueCardValues.end()) { //element has occured before so its a pair
+					timeCardOccuredPerPlayer.at(i) += 1;
+				}
+				else {
+					playerUniqueCardValues.push_back(players.at(i).at(j).getValue()); //value has not occured yet add it to unique val vector
+
+				}
+			}
+			playerUniqueCardValues.clear();
+		}
+
+
+
+
+
+		int highPairPlayerIndex = -1;
+		int secondHighestPairPlayerIndex = -1;
+		int highestPairValue = -1;
+		int secondHighestPairValue = -2;
+
+		for (int i = 0; i < highestFourKindPlayer.size(); i++) {
+			if (highestFourKindPlayer.at(i) == 1) {//ace
+				highestPairValue = highestFourKindPlayer.at(i);
+				highPairPlayerIndex = i;
+			}
+			else if (highestFourKindPlayer.at(i) >= highestPairValue) {
+				highestPairValue = highestFourKindPlayer.at(i);
+				highPairPlayerIndex = i;
+			}
+			else if (highestFourKindPlayer.at(i) >= secondHighestPairValue) {
+				secondHighestPairValue = highestFourKindPlayer.at(i);
+				secondHighestPairPlayerIndex = i;
+			}
+		}
+
+		if (secondHighestPairPlayerIndex != highPairPlayerIndex) { //if there was a 4 kind tie something has gone very wrong....
+			return highPairPlayerIndex;
+		}
+}
+
 int pokerGame::getHighStraightIndex()
 {
 	vector<int> highStraightValues{ 0,0,0,0,0,0 };
@@ -703,6 +755,12 @@ int pokerGame::getHighStraightIndex()
 	}
 }
 
+int pokerGame::getFullHouseIndex()
+{
+	int fullHouseIndex = getHighThreeKindIndex(); //full house ties broken by comparing 3 kind cards and impossible for both players to have same three kind so just call three kind method
+	return fullHouseIndex;
+}
+
 int pokerGame::getHighFlushIndex()
 {
 	vector<int> highFlushValues{ 0,0,0,0,0,0 };
@@ -735,6 +793,44 @@ int pokerGame::getHighFlushIndex()
 	else {
 		return -1; //tie
 	}
+}
+
+int pokerGame::getStraightFlushIndex()
+{
+	vector<int> highStraightFlushValues{ 0,0,0,0,0,0 };
+
+	for (int i = 0; i < players.size(); i++) {
+		if (playerHandTypes.at(i) == highCard) {
+			highStraightFlushValues.at(i) = evalHighCard(players.at(i), 0); //if they are not a high card leave value at 0. 
+		}
+	}
+
+	int highCardPlayerIndex = -1;
+	int secondHighestCardPlayerIndex = -1;
+	int highestCardValue = -1;
+	int secondHighestCardValue = -2;
+	for (int i = 0; i < players.size(); i++) {
+		if (highStraightFlushValues.at(i) >= highestCardValue) {
+			highestCardValue = highStraightFlushValues.at(i);
+			highCardPlayerIndex = i;
+		}
+		else if (highStraightFlushValues.at(i) >= secondHighestCardValue) {
+			secondHighestCardValue = highStraightFlushValues.at(i);
+			secondHighestCardPlayerIndex = i;
+		}
+	}
+
+	if (secondHighestCardPlayerIndex != highCardPlayerIndex) {
+		return highCardPlayerIndex;
+	}
+
+	else {
+		return -1;
+	}
+
+	
+
+
 }
 
 bool pokerGame::isPairsInVector(int pairVal, vector<Card> hand) {
@@ -1692,20 +1788,43 @@ void pokerGame::outputStatsOthers(ofstream& statsFile, int playerHandNum, int ot
 
 	}
 	else if (isTie == true && highestPlayerRankIndex == 0 && highestPlayerRank == handTypes::fullhouse) {
+		int bestFlushCardPlayer = getFullHouseIndex();
+		if (bestFlushCardPlayer == 0) {
+			incrementCardRank(playerHandTypes.at(0), 0);
+			statsFile << "There was a full house tie and 1st player won" << "\n";
+		}
+		else if (bestFlushCardPlayer == -1) {
+			statsFile << "There was a full flush tie" << "\n";
+		}
 
-		statsFile << "There was a fullhouse tie    ";
 	}
 	else if (isTie == true && highestPlayerRankIndex == 0 && highestPlayerRank == handTypes::fourKind) {
 
-		statsFile << "There was a tie    ";
+		int bestFourKindCardPlayer = getHighFourKindIndex();
+		if (bestFourKindCardPlayer == 0) {
+			incrementCardRank(playerHandTypes.at(0), 0);
+			statsFile << "There was a four kind tie and 1st player won" << "\n";
+		}
+		else if (bestFourKindCardPlayer == -1) {
+			statsFile << "There was a full flush tie" << "\n";
+		}
+		
 	}
 	else if (isTie == true && highestPlayerRankIndex == 0 && highestPlayerRank == handTypes::straightFlush) {
 
-		statsFile << "There was a tie    ";
+	int bestStraightFlushPlayer = getStraightFlushIndex();
+	if (bestStraightFlushPlayer == 0) {
+		incrementCardRank(playerHandTypes.at(0), 0);
+		statsFile << "There was a four kind tie and 1st player won" << "\n";
+	}
+	else if (bestStraightFlushPlayer == -1) {
+		statsFile << "There was a  full straight flush tie. This is crazy!" << "\n";
+	}
+
 	}
 	else if (isTie == true && highestPlayerRankIndex == 0 && highestPlayerRank == handTypes::royalFlush) {
 
-		statsFile << "There was a tie    ";
+		statsFile << "There was a royal flush tie. Go buy a lotto ticket!    ";
 	}
 
 
@@ -1723,7 +1842,7 @@ void pokerGame::outputStatsOthers(ofstream& statsFile, int playerHandNum, int ot
 		else {
 			if (playerHandTypes.at(i) == handTypes::highCard) {
 
-				statsFile << printHand(players.at(i)) << ",high card" << "," << (playerHighCardFrequency / highCardWins) * 100 << "%\n";
+				statsFile << printHand(players.at(i)) << ",high card" << "," << (highCardWins / float( playerHighCardFrequency)) * 100 << "%\n";
 			}
 
 		}
@@ -1735,7 +1854,7 @@ void pokerGame::outputStatsOthers(ofstream& statsFile, int playerHandNum, int ot
 		}
 		else {
 			if (playerHandTypes.at(i) == handTypes::onePair) {
-				statsFile << printHand(players.at(i)) << ",one pair" << "," << (playerOnePairFrequency / onePairWins) * 100 << "%\n";
+				statsFile << printHand(players.at(i)) << ",one pair" << "," << (onePairWins / float( playerOnePairFrequency)) * 100 << "%\n";
 			}
 		}
 
@@ -1748,7 +1867,7 @@ void pokerGame::outputStatsOthers(ofstream& statsFile, int playerHandNum, int ot
 		else {
 
 			if (playerHandTypes.at(i) == handTypes::twoPair) {
-				statsFile << printHand(players.at(i)) << ",two pair" << "," << (playerTwoPairFrequency / twoPairWins) * 100 << "%\n";
+				statsFile << printHand(players.at(i)) << ",two pair" << "," << (twoPairWins / float( playerTwoPairFrequency)) * 100 << "%\n";
 			}
 
 		}
@@ -1762,7 +1881,7 @@ void pokerGame::outputStatsOthers(ofstream& statsFile, int playerHandNum, int ot
 		else {
 
 			if (playerHandTypes.at(i) == handTypes::threeKind) {
-				statsFile << printHand(players.at(i)) << ",three kind" << "," << (playerThreeOfAKindFrequency / threeOfAKindWins) * 100 << "%\n";
+				statsFile << printHand(players.at(i)) << ",three kind" << "," << (threeOfAKindWins / float( playerThreeOfAKindFrequency)) * 100 << "%\n";
 			}
 
 		}
@@ -1775,7 +1894,7 @@ void pokerGame::outputStatsOthers(ofstream& statsFile, int playerHandNum, int ot
 		}
 		else {
 			if (playerHandTypes.at(i) == handTypes::straight) {
-				statsFile << printHand(players.at(i)) << ",straight" << "," << (playerStraightFrequency / straightWins) * 100 << "%\n";
+				statsFile << printHand(players.at(i)) << ",straight" << "," << (straightWins / float (playerStraightFrequency)) * 100 << "%\n";
 			}
 
 		}
@@ -1788,7 +1907,7 @@ void pokerGame::outputStatsOthers(ofstream& statsFile, int playerHandNum, int ot
 		}
 		else {
 			if (playerHandTypes.at(i) == handTypes::flush) {
-				statsFile << printHand(players.at(i)) << ",flush" << "," << (playerFlushFrequency / flushWins) * 100 << "%\n";
+				statsFile << printHand(players.at(i)) << ",flush" << "," << (flushWins / float(playerFlushFrequency)) * 100 << "%\n";
 			}
 
 		}
@@ -1802,7 +1921,7 @@ void pokerGame::outputStatsOthers(ofstream& statsFile, int playerHandNum, int ot
 		}
 		else {
 			if (playerHandTypes.at(i) == handTypes::fullhouse) {
-				statsFile << printHand(players.at(i)) << ",full house" << "," << (playerFullHouseFrequency / fullHouseWins) * 100 << "%\n";
+				statsFile << printHand(players.at(i)) << ",full house" << "," << ( fullHouseWins / float(playerFullHouseFrequency)) * 100 << "%\n";
 			}
 
 		}
@@ -1816,7 +1935,7 @@ void pokerGame::outputStatsOthers(ofstream& statsFile, int playerHandNum, int ot
 
 		else {
 			if (playerHandTypes.at(i) == handTypes::fourKind) {
-				statsFile << printHand(players.at(i)) << ",four of a kind" << "," << (playerFourKindFrequency / fourkindWins) * 100 << "%\n";
+				statsFile << printHand(players.at(i)) << ",four of a kind" << "," << ( fourkindWins / float(playerFourKindFrequency)) * 100 << "%\n";
 			}
 
 		}
@@ -1828,7 +1947,7 @@ void pokerGame::outputStatsOthers(ofstream& statsFile, int playerHandNum, int ot
 		}
 		else {
 			if (playerHandTypes.at(i) == handTypes::straightFlush) {
-				statsFile << printHand(players.at(i)) << ",straight flush" << "," << (straightFlushFrequency / straightFlushWins) * 100 << "%\n";
+				statsFile << printHand(players.at(i)) << ",straight flush" << "," << (  straightFlushWins / float(playerStraightFlushFrequency)) * 100 << "%\n";
 			}
 		}
 
@@ -1841,7 +1960,7 @@ void pokerGame::outputStatsOthers(ofstream& statsFile, int playerHandNum, int ot
 
 		else {
 			if (playerHandTypes.at(i) == handTypes::royalFlush) {
-				statsFile << printHand(players.at(i)) << ",royal flush" << "," << (playerRoyalFlushFrequency / royalFlushWins) * 100 << "%\n";
+				statsFile << printHand(players.at(i)) << ",royal flush" << "," << ( royalFlushWins / float (playerRoyalFlushFrequency)) * 100 << "%\n";
 			}
 
 		}
